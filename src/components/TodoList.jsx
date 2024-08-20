@@ -30,18 +30,16 @@ const TodoList = () => {
   const handleInputChange = (e) => setNewTodo(e.target.value);
 
   const handleUpdate = (id) => {
-    const updatedTodos = [];
-    todos.forEach((todo) => {
+    const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
-        const updatedTodo = {
+        const newTodo = {
           id: todo.id,
           text: todo.text,
           completed: !todo.completed,
         };
-        updatedTodos.push(updatedTodo);
-      } else {
-        updatedTodos.push(todo);
+        return newTodo;
       }
+      return todo;
     });
     setTodos(updatedTodos);
   };
