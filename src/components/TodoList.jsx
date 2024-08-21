@@ -28,20 +28,33 @@ const TodoList = () => {
   };
 
   const handleInputChange = (e) => setNewTodo(e.target.value);
-
+  //업데이트
   const handleUpdate = (id) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         const newTodo = {
-          id: todo.id,
-          text: todo.text,
+          //스프레트 오퍼레이트로 간단히 작성가능!
+          ...todo,
           completed: !todo.completed,
+
+          //   id: todo.id,
+          //   text: todo.text,
+          //   completed: !todo.completed,
         };
         return newTodo;
       }
       return todo;
     });
     setTodos(updatedTodos);
+  };
+  //삭제
+  const handleDelete = (id) => {
+    const filteredTodos = todos.filter((todo) => {
+      return todo.id === id ? false : true;
+    });
+
+    setTodos(filteredTodos);
+    alert("삭제되었습니다.");
   };
 
   return (
@@ -59,8 +72,18 @@ const TodoList = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.text} - {String(todo.completed)}
-            <button onClick={() => handleUpdate(todo.id)}>완료</button>
+            <p
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+              }}
+            >
+              {todo.text} - {""}
+              {todo.completed ? <span>완료됨</span> : <span>미완료</span>}
+            </p>
+            <button onClick={() => handleUpdate(todo.id)}>
+              {todo.completed ? "취소" : "완료"}
+            </button>
+            <button onClick={() => handleDelete(todo.id)}>삭제</button>
           </li>
         ))}
       </ul>
