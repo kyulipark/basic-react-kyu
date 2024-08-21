@@ -86,3 +86,26 @@ forEach 보다 map이 더 효율적이다,
   5. 상태를 새로운 배열로 업데이트
 
 map이 좀더 깔끔하게 코드를 짤 수 있다.
+
+
+</br>
+</br>
+✨ update  : 삭제 기능 구현!
+
+1. 삭제 버튼을 추가한다.
+2. onClick과 화살표 함수로 이벤트를 작성한다.
+ - `filter`메서드로 해당 `id`를 가진 항목을 필터링한다.
+```
+const handleDelete = (id) => {
+    const filteredTodos = todos.filter((todo) => {
+      return todo.id === id ? false : true;
+    });
+```
+
+3. 필터링 된 배열을 받아 현재 Todo 리스트를 가지고 있는 상태를 업데이트한다.
+ - 삭제는 `alert`을 띄워 주는 것이 좋다.
+`setTodos(filteredTodos);
+    alert("삭제되었습니다.");`
+
+4. 삭제 버튼과 이벤트를 연결한다.
+` <button onClick={() => handleDelete(todo.id)}>삭제</button>`
