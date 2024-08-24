@@ -121,3 +121,32 @@ const handleDelete = (id) => {
 React는 컴포넌트 하나에 한가지 기능을 넣어야 한다. 마치, 블록처럼!
 그래야 가독성과, 유지보수, 재사용성이 높아진다.
 컴포넌트 분리를 연습하자! `import`를 잘 확인해야한다!
+
+</br>
+</br>
+🎉 add: styled-components 추가!
+
+`yarn add styled-components`명령어로 해당 컴포넌트를 깔아준다. 
+(명령어로 프로그램을 깔때에 오타가나면 악성코드를 심어둔 이상한 파일을 깔 수있으니 잘 봐야한다!)
+`import`를 잊지말자.
+
+태그로 쉽게 스타일 설정을 할 수 있다. 
+
+```
+const DashboardHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+
+ h1 {
+    font-size: 1rem;
+  }
+
+ &:first-child {
+    width: 240px;
+  }
+`;
+```
+
+스타일컴포넌트로 감싼 태그 속의 태그도 쉽게 변경할 수 있고, 
+원하는 부분만 추가로 스타일을 적용할 수 있는 유용한 컴포넌트이다!
