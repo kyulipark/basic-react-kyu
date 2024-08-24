@@ -109,3 +109,15 @@ const handleDelete = (id) => {
 
 4. 삭제 버튼과 이벤트를 연결한다.
 ` <button onClick={() => handleDelete(todo.id)}>삭제</button>`
+
+</br>
+</br>
+🎉 add : 컴포넌트 분리!
+
+먼저, components의 폴더를 src폴더 안에 만든다.
+해당 폴더 안에 `TodoContainer.jsx`, `TodoForm`, `TodoList`, `TodoItem.jsx`의 파일을 만들어서,
+각각의 기능에 따라 분리해 보았다.
+
+React는 컴포넌트 하나에 한가지 기능을 넣어야 한다. 마치, 블록처럼!
+그래야 가독성과, 유지보수, 재사용성이 높아진다.
+컴포넌트 분리를 연습하자!
