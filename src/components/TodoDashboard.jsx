@@ -10,6 +10,7 @@ const TodoDashboard = () => {
         <DashboardCard>16 New Task</DashboardCard>
         <DashboardCard>3 completed</DashboardCard>
         <DashboardCard>14 pending</DashboardCard>
+        <DashboardCard>what the f</DashboardCard>
       </DashboardCardList>
     </DashboardSection>
   );
@@ -41,7 +42,7 @@ const DashboardCard = styled.div`
   border-radius: 1rem;
   width: 120px;
   height: 120px;
-
+  margin: 8px;
   color: white;
   font-weight: bold;
 

@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const TodoItem = ({ todo, handleUpdate, handleDelete }) => {
   return (
     <li key={todo.id}>
