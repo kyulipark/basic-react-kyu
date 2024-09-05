@@ -3,9 +3,6 @@ import styled from "styled-components";
 const TodoDashboard = () => {
   return (
     <DashboardSection>
-      <DashboardHeader>
-        <h1>Todo Dashboard</h1>
-      </DashboardHeader>
       <DashboardCardList>
         <DashboardCard>16 New Task</DashboardCard>
         <DashboardCard>3 completed</DashboardCard>
@@ -24,11 +21,11 @@ const DashboardSection = styled.section`
   gap: 4px;
 `;
 
-const DashboardHeader = styled.div`
-  h1 {
-    font-size: 1rem;
-  }
-`;
+// const DashboardHeader = styled.div`
+//   h1 {
+//     font-size: 1rem;
+//   }
+// `;
 
 const DashboardCardList = styled.div`
   display: flex;
