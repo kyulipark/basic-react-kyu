@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 
 const SAMPLE_TODOS = [
@@ -47,7 +48,36 @@ const TodoList = () => {
         ))}
       </ul>
     </div>
+=======
+import styled from "styled-components";
+import TodoItem from "./TodoItem";
+
+const TodoList = ({ todos, handleUpdate, handleDelete }) => {
+  return (
+    <StyledUI>
+      <ul>
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+          />
+        ))}
+      </ul>
+    </StyledUI>
+>>>>>>> 23be3e73436abc24f3cc9e9a9a30337d556dc4ef
   );
 };
 
 export default TodoList;
+
+const StyledUI = styled.div`
+  background-color: aliceblue;
+  border-radius: 1rem;
+  width: 720px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 10px;
+`;
