@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SAMPLE_TODOS } from "../constants/sample-todo";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
