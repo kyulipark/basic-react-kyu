@@ -3,6 +3,7 @@ import { SAMPLE_TODOS } from "../constants/sample-todo";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import TodoDashboard from "./TodoDashboard";
+import styled from "styled-components";
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState(SAMPLE_TODOS);
@@ -39,16 +40,22 @@ const TodoContainer = () => {
     alert("삭제되었습니다.");
   };
   return (
-    <div>
-      <TodoDashboard />
-      <TodoForm addTodos={addTodos} />
+    <TodoContainerWrapper>
+      <TodoDashboard all={todos.length} completed={6} pending={13} />
+      {/* <TodoForm addTodos={addTodos} /> */}
       <TodoList
         todos={todos}
         handleUpdate={handleUpdate}
         handleDelete={handleDelete}
       />
-    </div>
+    </TodoContainerWrapper>
   );
 };
 
 export default TodoContainer;
+
+const TodoContainerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
