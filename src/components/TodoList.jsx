@@ -3,8 +3,11 @@ import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, handleUpdate, handleDelete }) => {
   return (
-    <StyledUI>
-      <ul>
+    <TaskSection>
+      <TaskdHeader>
+        <h1>Tasks</h1>
+      </TaskdHeader>
+      <TaskList>
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}
@@ -13,19 +16,28 @@ const TodoList = ({ todos, handleUpdate, handleDelete }) => {
             handleDelete={handleDelete}
           />
         ))}
-      </ul>
-    </StyledUI>
+      </TaskList>
+    </TaskSection>
   );
 };
 
 export default TodoList;
 
-const StyledUI = styled.div`
-  background-color: aliceblue;
-  border-radius: 1rem;
-  width: 720px;
-  height: auto;
-  margin-left: 10px;
-  margin-top: 20px;
-  padding: 10px;
+const TaskSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const TaskdHeader = styled.div`
+  h1 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+`;
+
+const TaskList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;

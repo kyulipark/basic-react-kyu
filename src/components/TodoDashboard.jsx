@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import styled from "styled-components";
 
-const TodoDashboard = () => {
+const TodoDashboard = ({ all = 0, completed = 0, pending = 0 }) => {
   return (
     <DashboardSection>
       <DashboardHeader>
@@ -19,7 +19,7 @@ const TodoDashboard = () => {
             <EllipsisIcon />
           </div>
           <p>
-            16 <br /> New Task
+            {all} <br /> New Task
           </p>
         </DashboardCard>
         <DashboardCard flex="1" color="teal">
@@ -29,7 +29,7 @@ const TodoDashboard = () => {
           </div>
           <p>
             {" "}
-            3 <br /> completed
+            {completed} <br /> completed
           </p>
         </DashboardCard>
         <DashboardCard flex="1" color="tomato">
@@ -38,7 +38,7 @@ const TodoDashboard = () => {
             <EllipsisIcon />
           </div>
           <p>
-            14 <br /> pending
+            {pending} <br /> pending
           </p>
         </DashboardCard>
       </DashboardCardList>
